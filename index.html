@@ -31,6 +31,7 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* 2. Custom Modern Navigation */
@@ -142,6 +143,8 @@
             cursor: pointer;
             box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-block;
+            text-decoration: none;
         }
 
         .action-btn:hover {
@@ -218,15 +221,80 @@
             margin-top: 1rem;
         }
 
-        /* 6. Simple Responsive Footer */
+        /* 6. Premium Glassmorphic Contact Form Styles */
+        #contact {
+            margin: 5rem auto 2rem auto;
+            max-width: 650px;
+            width: 100%;
+            padding: 0 1.5rem;
+            scroll-margin-top: 7rem;
+        }
+
+        .form-container {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            background: #0f172a;
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            padding: 0.85rem 1.2rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
+        }
+
+        .form-submit-container {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        /* 7. Simple Responsive Footer */
         footer {
             background: rgba(15, 23, 42, 0.4);
-            border-t: 1px solid var(--panel-border);
+            border-top: 1px solid var(--panel-border);
             padding: 2rem;
             text-align: center;
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-top: auto;
+            width: 100%;
         }
     </style>
 </head>
@@ -238,7 +306,7 @@
         <div class="nav-links">
             <a href="#">Dashboard</a>
             <a href="#projects">Gallery</a>
-            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -265,75 +333,3 @@
                 <!-- System Box Module 1 -->
                 <div class="gallery-item">
                     <div class="artwork-container">
-                        <canvas id="canvas1" width="400" height="200"></canvas>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Environment Core</h3>
-                        <p>Fully established file configuration framework mapped dynamically to active Mac terminal profiles.</p>
-                        <span class="badge">Operational</span>
-                    </div>
-                </div>
-
-                <!-- System Box Module 2 -->
-                <div class="gallery-item">
-                    <div class="artwork-container">
-                        <canvas id="canvas2" width="400" height="200"></canvas>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>GitHub Ecosystem</h3>
-                        <p>Remote codebase synchronization paths connected directly using secure authentication keys.</p>
-                        <span class="badge">Connected</span>
-                    </div>
-                </div>
-
-                <!-- System Box Module 3 -->
-                <div class="gallery-item">
-                    <div class="artwork-container">
-                        <canvas id="canvas3" width="400" height="200"></canvas>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>GitLab Pipeline</h3>
-                        <p>Private workspace repository allocation tracking and automatic dual-cloud updates.</p>
-                        <span class="badge">Synchronized</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-<!-- Modern Contact Form Section -->
-<section id="contact" class="max-w-2xl mx-auto mt-24">
-    <h2 class="text-3xl font-bold text-center mb-8">Get In Touch</h2>
-    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
-        <!-- Replace 'YOUR_ACCESS_KEY_HERE' with your real key if using a service later -->
-        <form action="https://web3forms.com" method="POST" class="space-y-6">
-
-                            <input type="text" name="name" required class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                            <input type="email" name="email" required class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                        <textarea name="message" rows="4" required class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition" placeholder="Tell me about your project..."></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg shadow-indigo-600/30 transition-all transform active:scale-95 cursor-pointer">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    <!-- Footer System Mapping -->
-    <footer>
-        <p>&copy; 2026 Production-Ready Front-End Environment. No external assets required.</p>
-    </footer>
-
-    <!-- Interactive Native Canvas Graphic Artwork Generation Logic -->
-    <script>
-        // Interactive Button Event Interface

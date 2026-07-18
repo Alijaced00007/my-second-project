@@ -1,0 +1,11 @@
+# MacOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local development server files
+.live-server*
+
+# Dependency configurations
+node_modules/
+.env
